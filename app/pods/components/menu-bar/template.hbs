@@ -1,0 +1,22 @@
+<!-- the navbar -->
+<div id="header" class="dockednavbar">
+  <div class="container">
+    <nav>
+      <ul>
+        <li>Aaron Abbott</li>
+        <li>{{#link-to 'index' class="button button-primary"}}Home{{/link-to}}</li>
+        {{#each menus as |menuEntry|}}
+        <li>
+          {{#if menuEntry.route}}
+            {{#link-to menuEntry.route class="button"}}{{menuEntry.entryName}}{{/link-to}}
+          {{else if menuEntry.link}}
+          <a class="button" href="{{menuEntry.link}}">{{menuEntry.entryName}}</a>
+          {{else}}
+            {{menuEntry.entryName}}
+          {{/if}}
+        </li>
+        {{/each}}
+      </ul>
+    </nav>
+  </div>
+</div>
