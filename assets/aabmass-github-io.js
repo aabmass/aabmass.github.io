@@ -3,67 +3,67 @@
 
 /* jshint ignore:end */
 
-define('aambass-github-io/app', ['exports', 'ember', 'aambass-github-io/resolver', 'ember-load-initializers', 'aambass-github-io/config/environment'], function (exports, _ember, _aambassGithubIoResolver, _emberLoadInitializers, _aambassGithubIoConfigEnvironment) {
+define('aabmass-github-io/app', ['exports', 'ember', 'aabmass-github-io/resolver', 'ember-load-initializers', 'aabmass-github-io/config/environment'], function (exports, _ember, _aabmassGithubIoResolver, _emberLoadInitializers, _aabmassGithubIoConfigEnvironment) {
 
   var App = undefined;
 
   _ember['default'].MODEL_FACTORY_INJECTIONS = true;
 
   App = _ember['default'].Application.extend({
-    modulePrefix: _aambassGithubIoConfigEnvironment['default'].modulePrefix,
-    podModulePrefix: _aambassGithubIoConfigEnvironment['default'].podModulePrefix,
-    Resolver: _aambassGithubIoResolver['default']
+    modulePrefix: _aabmassGithubIoConfigEnvironment['default'].modulePrefix,
+    podModulePrefix: _aabmassGithubIoConfigEnvironment['default'].podModulePrefix,
+    Resolver: _aabmassGithubIoResolver['default']
   });
 
-  (0, _emberLoadInitializers['default'])(App, _aambassGithubIoConfigEnvironment['default'].modulePrefix);
+  (0, _emberLoadInitializers['default'])(App, _aabmassGithubIoConfigEnvironment['default'].modulePrefix);
 
   exports['default'] = App;
 });
-define('aambass-github-io/components/app-version', ['exports', 'ember-cli-app-version/components/app-version', 'aambass-github-io/config/environment'], function (exports, _emberCliAppVersionComponentsAppVersion, _aambassGithubIoConfigEnvironment) {
+define('aabmass-github-io/components/app-version', ['exports', 'ember-cli-app-version/components/app-version', 'aabmass-github-io/config/environment'], function (exports, _emberCliAppVersionComponentsAppVersion, _aabmassGithubIoConfigEnvironment) {
 
-  var name = _aambassGithubIoConfigEnvironment['default'].APP.name;
-  var version = _aambassGithubIoConfigEnvironment['default'].APP.version;
+  var name = _aabmassGithubIoConfigEnvironment['default'].APP.name;
+  var version = _aabmassGithubIoConfigEnvironment['default'].APP.version;
 
   exports['default'] = _emberCliAppVersionComponentsAppVersion['default'].extend({
     version: version,
     name: name
   });
 });
-define('aambass-github-io/components/head-content', ['exports', 'ember', 'aambass-github-io/templates/head'], function (exports, _ember, _aambassGithubIoTemplatesHead) {
+define('aabmass-github-io/components/head-content', ['exports', 'ember', 'aabmass-github-io/templates/head'], function (exports, _ember, _aabmassGithubIoTemplatesHead) {
   exports['default'] = _ember['default'].Component.extend({
     tagName: '',
     model: _ember['default'].inject.service('head-data'),
-    layout: _aambassGithubIoTemplatesHead['default']
+    layout: _aabmassGithubIoTemplatesHead['default']
   });
 });
-define('aambass-github-io/components/head-layout', ['exports', 'ember', 'ember-cli-head/templates/components/head-layout'], function (exports, _ember, _emberCliHeadTemplatesComponentsHeadLayout) {
+define('aabmass-github-io/components/head-layout', ['exports', 'ember', 'ember-cli-head/templates/components/head-layout'], function (exports, _ember, _emberCliHeadTemplatesComponentsHeadLayout) {
   exports['default'] = _ember['default'].Component.extend({
     tagName: '',
     layout: _emberCliHeadTemplatesComponentsHeadLayout['default']
   });
 });
-define('aambass-github-io/controllers/array', ['exports', 'ember'], function (exports, _ember) {
+define('aabmass-github-io/controllers/array', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Controller;
 });
-define('aambass-github-io/controllers/object', ['exports', 'ember'], function (exports, _ember) {
+define('aabmass-github-io/controllers/object', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Controller;
 });
-define('aambass-github-io/helpers/page-title', ['exports', 'ember-page-title/helpers/page-title'], function (exports, _emberPageTitleHelpersPageTitle) {
+define('aabmass-github-io/helpers/page-title', ['exports', 'ember-page-title/helpers/page-title'], function (exports, _emberPageTitleHelpersPageTitle) {
   exports['default'] = _emberPageTitleHelpersPageTitle['default'];
 });
-define('aambass-github-io/helpers/pluralize', ['exports', 'ember-inflector/lib/helpers/pluralize'], function (exports, _emberInflectorLibHelpersPluralize) {
+define('aabmass-github-io/helpers/pluralize', ['exports', 'ember-inflector/lib/helpers/pluralize'], function (exports, _emberInflectorLibHelpersPluralize) {
   exports['default'] = _emberInflectorLibHelpersPluralize['default'];
 });
-define('aambass-github-io/helpers/singularize', ['exports', 'ember-inflector/lib/helpers/singularize'], function (exports, _emberInflectorLibHelpersSingularize) {
+define('aabmass-github-io/helpers/singularize', ['exports', 'ember-inflector/lib/helpers/singularize'], function (exports, _emberInflectorLibHelpersSingularize) {
   exports['default'] = _emberInflectorLibHelpersSingularize['default'];
 });
-define('aambass-github-io/initializers/app-version', ['exports', 'ember-cli-app-version/initializer-factory', 'aambass-github-io/config/environment'], function (exports, _emberCliAppVersionInitializerFactory, _aambassGithubIoConfigEnvironment) {
+define('aabmass-github-io/initializers/app-version', ['exports', 'ember-cli-app-version/initializer-factory', 'aabmass-github-io/config/environment'], function (exports, _emberCliAppVersionInitializerFactory, _aabmassGithubIoConfigEnvironment) {
   exports['default'] = {
     name: 'App Version',
-    initialize: (0, _emberCliAppVersionInitializerFactory['default'])(_aambassGithubIoConfigEnvironment['default'].APP.name, _aambassGithubIoConfigEnvironment['default'].APP.version)
+    initialize: (0, _emberCliAppVersionInitializerFactory['default'])(_aabmassGithubIoConfigEnvironment['default'].APP.name, _aabmassGithubIoConfigEnvironment['default'].APP.version)
   };
 });
-define('aambass-github-io/initializers/container-debug-adapter', ['exports', 'ember-resolver/container-debug-adapter'], function (exports, _emberResolverContainerDebugAdapter) {
+define('aabmass-github-io/initializers/container-debug-adapter', ['exports', 'ember-resolver/container-debug-adapter'], function (exports, _emberResolverContainerDebugAdapter) {
   exports['default'] = {
     name: 'container-debug-adapter',
 
@@ -75,7 +75,7 @@ define('aambass-github-io/initializers/container-debug-adapter', ['exports', 'em
     }
   };
 });
-define('aambass-github-io/initializers/data-adapter', ['exports', 'ember'], function (exports, _ember) {
+define('aabmass-github-io/initializers/data-adapter', ['exports', 'ember'], function (exports, _ember) {
 
   /*
     This initializer is here to keep backwards compatibility with code depending
@@ -90,7 +90,7 @@ define('aambass-github-io/initializers/data-adapter', ['exports', 'ember'], func
     initialize: _ember['default'].K
   };
 });
-define('aambass-github-io/initializers/ember-data', ['exports', 'ember-data/setup-container', 'ember-data/-private/core'], function (exports, _emberDataSetupContainer, _emberDataPrivateCore) {
+define('aabmass-github-io/initializers/ember-data', ['exports', 'ember-data/setup-container', 'ember-data/-private/core'], function (exports, _emberDataSetupContainer, _emberDataPrivateCore) {
 
   /*
   
@@ -129,19 +129,19 @@ define('aambass-github-io/initializers/ember-data', ['exports', 'ember-data/setu
     initialize: _emberDataSetupContainer['default']
   };
 });
-define('aambass-github-io/initializers/export-application-global', ['exports', 'ember', 'aambass-github-io/config/environment'], function (exports, _ember, _aambassGithubIoConfigEnvironment) {
+define('aabmass-github-io/initializers/export-application-global', ['exports', 'ember', 'aabmass-github-io/config/environment'], function (exports, _ember, _aabmassGithubIoConfigEnvironment) {
   exports.initialize = initialize;
 
   function initialize() {
     var application = arguments[1] || arguments[0];
-    if (_aambassGithubIoConfigEnvironment['default'].exportApplicationGlobal !== false) {
-      var value = _aambassGithubIoConfigEnvironment['default'].exportApplicationGlobal;
+    if (_aabmassGithubIoConfigEnvironment['default'].exportApplicationGlobal !== false) {
+      var value = _aabmassGithubIoConfigEnvironment['default'].exportApplicationGlobal;
       var globalName;
 
       if (typeof value === 'string') {
         globalName = value;
       } else {
-        globalName = _ember['default'].String.classify(_aambassGithubIoConfigEnvironment['default'].modulePrefix);
+        globalName = _ember['default'].String.classify(_aabmassGithubIoConfigEnvironment['default'].modulePrefix);
       }
 
       if (!window[globalName]) {
@@ -163,7 +163,7 @@ define('aambass-github-io/initializers/export-application-global', ['exports', '
     initialize: initialize
   };
 });
-define('aambass-github-io/initializers/injectStore', ['exports', 'ember'], function (exports, _ember) {
+define('aabmass-github-io/initializers/injectStore', ['exports', 'ember'], function (exports, _ember) {
 
   /*
     This initializer is here to keep backwards compatibility with code depending
@@ -178,7 +178,7 @@ define('aambass-github-io/initializers/injectStore', ['exports', 'ember'], funct
     initialize: _ember['default'].K
   };
 });
-define('aambass-github-io/initializers/store', ['exports', 'ember'], function (exports, _ember) {
+define('aabmass-github-io/initializers/store', ['exports', 'ember'], function (exports, _ember) {
 
   /*
     This initializer is here to keep backwards compatibility with code depending
@@ -193,7 +193,7 @@ define('aambass-github-io/initializers/store', ['exports', 'ember'], function (e
     initialize: _ember['default'].K
   };
 });
-define('aambass-github-io/initializers/transforms', ['exports', 'ember'], function (exports, _ember) {
+define('aabmass-github-io/initializers/transforms', ['exports', 'ember'], function (exports, _ember) {
 
   /*
     This initializer is here to keep backwards compatibility with code depending
@@ -208,11 +208,11 @@ define('aambass-github-io/initializers/transforms', ['exports', 'ember'], functi
     initialize: _ember['default'].K
   };
 });
-define('aambass-github-io/instance-initializers/browser/head', ['exports', 'ember', 'aambass-github-io/config/environment'], function (exports, _ember, _aambassGithubIoConfigEnvironment) {
+define('aabmass-github-io/instance-initializers/browser/head', ['exports', 'ember', 'aabmass-github-io/config/environment'], function (exports, _ember, _aabmassGithubIoConfigEnvironment) {
   exports.initialize = initialize;
 
   function initialize(instance) {
-    if (_aambassGithubIoConfigEnvironment['default']['ember-cli-head'] && _aambassGithubIoConfigEnvironment['default']['ember-cli-head']['suppressBrowserRender']) {
+    if (_aabmassGithubIoConfigEnvironment['default']['ember-cli-head'] && _aabmassGithubIoConfigEnvironment['default']['ember-cli-head']['suppressBrowserRender']) {
       return true;
     }
 
@@ -229,16 +229,16 @@ define('aambass-github-io/instance-initializers/browser/head', ['exports', 'embe
     initialize: initialize
   };
 });
-define("aambass-github-io/instance-initializers/ember-data", ["exports", "ember-data/-private/instance-initializers/initialize-store-service"], function (exports, _emberDataPrivateInstanceInitializersInitializeStoreService) {
+define("aabmass-github-io/instance-initializers/ember-data", ["exports", "ember-data/-private/instance-initializers/initialize-store-service"], function (exports, _emberDataPrivateInstanceInitializersInitializeStoreService) {
   exports["default"] = {
     name: "ember-data",
     initialize: _emberDataPrivateInstanceInitializersInitializeStoreService["default"]
   };
 });
-define('aambass-github-io/pods/blog/route', ['exports', 'ember'], function (exports, _ember) {
+define('aabmass-github-io/pods/blog/route', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Route.extend({});
 });
-define("aambass-github-io/pods/blog/template", ["exports"], function (exports) {
+define("aabmass-github-io/pods/blog/template", ["exports"], function (exports) {
   exports["default"] = Ember.HTMLBars.template((function () {
     return {
       meta: {
@@ -258,7 +258,7 @@ define("aambass-github-io/pods/blog/template", ["exports"], function (exports) {
             "column": 0
           }
         },
-        "moduleName": "aambass-github-io/pods/blog/template.hbs"
+        "moduleName": "aabmass-github-io/pods/blog/template.hbs"
       },
       isEmpty: false,
       arity: 0,
@@ -284,7 +284,7 @@ define("aambass-github-io/pods/blog/template", ["exports"], function (exports) {
     };
   })());
 });
-define('aambass-github-io/pods/components/menu-bar/component', ['exports', 'ember'], function (exports, _ember) {
+define('aabmass-github-io/pods/components/menu-bar/component', ['exports', 'ember'], function (exports, _ember) {
 
   var menusArr = [{
     entryName: 'My Github',
@@ -298,7 +298,7 @@ define('aambass-github-io/pods/components/menu-bar/component', ['exports', 'embe
     menus: menusArr
   });
 });
-define("aambass-github-io/pods/components/menu-bar/template", ["exports"], function (exports) {
+define("aabmass-github-io/pods/components/menu-bar/template", ["exports"], function (exports) {
   exports["default"] = Ember.HTMLBars.template((function () {
     var child0 = (function () {
       return {
@@ -316,7 +316,7 @@ define("aambass-github-io/pods/components/menu-bar/template", ["exports"], funct
               "column": 66
             }
           },
-          "moduleName": "aambass-github-io/pods/components/menu-bar/template.hbs"
+          "moduleName": "aabmass-github-io/pods/components/menu-bar/template.hbs"
         },
         isEmpty: false,
         arity: 0,
@@ -354,7 +354,7 @@ define("aambass-github-io/pods/components/menu-bar/template", ["exports"], funct
                   "column": 78
                 }
               },
-              "moduleName": "aambass-github-io/pods/components/menu-bar/template.hbs"
+              "moduleName": "aabmass-github-io/pods/components/menu-bar/template.hbs"
             },
             isEmpty: false,
             arity: 0,
@@ -393,7 +393,7 @@ define("aambass-github-io/pods/components/menu-bar/template", ["exports"], funct
                 "column": 10
               }
             },
-            "moduleName": "aambass-github-io/pods/components/menu-bar/template.hbs"
+            "moduleName": "aabmass-github-io/pods/components/menu-bar/template.hbs"
           },
           isEmpty: false,
           arity: 0,
@@ -436,7 +436,7 @@ define("aambass-github-io/pods/components/menu-bar/template", ["exports"], funct
                   "column": 10
                 }
               },
-              "moduleName": "aambass-github-io/pods/components/menu-bar/template.hbs"
+              "moduleName": "aabmass-github-io/pods/components/menu-bar/template.hbs"
             },
             isEmpty: false,
             arity: 0,
@@ -483,7 +483,7 @@ define("aambass-github-io/pods/components/menu-bar/template", ["exports"], funct
                   "column": 10
                 }
               },
-              "moduleName": "aambass-github-io/pods/components/menu-bar/template.hbs"
+              "moduleName": "aabmass-github-io/pods/components/menu-bar/template.hbs"
             },
             isEmpty: false,
             arity: 0,
@@ -524,7 +524,7 @@ define("aambass-github-io/pods/components/menu-bar/template", ["exports"], funct
                 "column": 10
               }
             },
-            "moduleName": "aambass-github-io/pods/components/menu-bar/template.hbs"
+            "moduleName": "aabmass-github-io/pods/components/menu-bar/template.hbs"
           },
           isEmpty: false,
           arity: 0,
@@ -563,7 +563,7 @@ define("aambass-github-io/pods/components/menu-bar/template", ["exports"], funct
               "column": 8
             }
           },
-          "moduleName": "aambass-github-io/pods/components/menu-bar/template.hbs"
+          "moduleName": "aabmass-github-io/pods/components/menu-bar/template.hbs"
         },
         isEmpty: false,
         arity: 1,
@@ -613,7 +613,7 @@ define("aambass-github-io/pods/components/menu-bar/template", ["exports"], funct
             "column": 0
           }
         },
-        "moduleName": "aambass-github-io/pods/components/menu-bar/template.hbs"
+        "moduleName": "aabmass-github-io/pods/components/menu-bar/template.hbs"
       },
       isEmpty: false,
       arity: 0,
@@ -683,10 +683,10 @@ define("aambass-github-io/pods/components/menu-bar/template", ["exports"], funct
     };
   })());
 });
-define('aambass-github-io/pods/index/route', ['exports', 'ember'], function (exports, _ember) {
+define('aabmass-github-io/pods/index/route', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Route.extend({});
 });
-define("aambass-github-io/pods/index/template", ["exports"], function (exports) {
+define("aabmass-github-io/pods/index/template", ["exports"], function (exports) {
   exports["default"] = Ember.HTMLBars.template((function () {
     return {
       meta: {
@@ -706,7 +706,7 @@ define("aambass-github-io/pods/index/template", ["exports"], function (exports) 
             "column": 0
           }
         },
-        "moduleName": "aambass-github-io/pods/index/template.hbs"
+        "moduleName": "aabmass-github-io/pods/index/template.hbs"
       },
       isEmpty: false,
       arity: 0,
@@ -1010,13 +1010,13 @@ define("aambass-github-io/pods/index/template", ["exports"], function (exports) 
     };
   })());
 });
-define('aambass-github-io/resolver', ['exports', 'ember-resolver'], function (exports, _emberResolver) {
+define('aabmass-github-io/resolver', ['exports', 'ember-resolver'], function (exports, _emberResolver) {
   exports['default'] = _emberResolver['default'];
 });
-define('aambass-github-io/router', ['exports', 'ember', 'aambass-github-io/config/environment'], function (exports, _ember, _aambassGithubIoConfigEnvironment) {
+define('aabmass-github-io/router', ['exports', 'ember', 'aabmass-github-io/config/environment'], function (exports, _ember, _aabmassGithubIoConfigEnvironment) {
 
   var Router = _ember['default'].Router.extend({
-    location: _aambassGithubIoConfigEnvironment['default'].locationType
+    location: _aabmassGithubIoConfigEnvironment['default'].locationType
   });
 
   Router.map(function () {
@@ -1025,7 +1025,7 @@ define('aambass-github-io/router', ['exports', 'ember', 'aambass-github-io/confi
 
   exports['default'] = Router;
 });
-define('aambass-github-io/services/ajax', ['exports', 'ember-ajax/services/ajax'], function (exports, _emberAjaxServicesAjax) {
+define('aabmass-github-io/services/ajax', ['exports', 'ember-ajax/services/ajax'], function (exports, _emberAjaxServicesAjax) {
   Object.defineProperty(exports, 'default', {
     enumerable: true,
     get: function get() {
@@ -1033,7 +1033,7 @@ define('aambass-github-io/services/ajax', ['exports', 'ember-ajax/services/ajax'
     }
   });
 });
-define('aambass-github-io/services/head-data', ['exports', 'ember-cli-head/services/head-data'], function (exports, _emberCliHeadServicesHeadData) {
+define('aabmass-github-io/services/head-data', ['exports', 'ember-cli-head/services/head-data'], function (exports, _emberCliHeadServicesHeadData) {
   Object.defineProperty(exports, 'default', {
     enumerable: true,
     get: function get() {
@@ -1041,7 +1041,7 @@ define('aambass-github-io/services/head-data', ['exports', 'ember-cli-head/servi
     }
   });
 });
-define('aambass-github-io/services/page-title-list', ['exports', 'ember-page-title/services/page-title-list', 'aambass-github-io/config/environment'], function (exports, _emberPageTitleServicesPageTitleList, _aambassGithubIoConfigEnvironment) {
+define('aabmass-github-io/services/page-title-list', ['exports', 'ember-page-title/services/page-title-list', 'aabmass-github-io/config/environment'], function (exports, _emberPageTitleServicesPageTitleList, _aabmassGithubIoConfigEnvironment) {
 
   function capitalize(key) {
     return key.charAt(0).toUpperCase() + key.slice(1);
@@ -1049,14 +1049,14 @@ define('aambass-github-io/services/page-title-list', ['exports', 'ember-page-tit
 
   var defaults = {};
   ['separator', 'prepend', 'replace'].forEach(function (key) {
-    if (_aambassGithubIoConfigEnvironment['default'].pageTitle && _aambassGithubIoConfigEnvironment['default'].pageTitle[key]) {
-      defaults['default' + capitalize(key)] = _aambassGithubIoConfigEnvironment['default'].pageTitle[key];
+    if (_aabmassGithubIoConfigEnvironment['default'].pageTitle && _aabmassGithubIoConfigEnvironment['default'].pageTitle[key]) {
+      defaults['default' + capitalize(key)] = _aabmassGithubIoConfigEnvironment['default'].pageTitle[key];
     }
   });
 
   exports['default'] = _emberPageTitleServicesPageTitleList['default'].extend(defaults);
 });
-define("aambass-github-io/templates/application", ["exports"], function (exports) {
+define("aabmass-github-io/templates/application", ["exports"], function (exports) {
   exports["default"] = Ember.HTMLBars.template((function () {
     return {
       meta: {
@@ -1076,7 +1076,7 @@ define("aambass-github-io/templates/application", ["exports"], function (exports
             "column": 0
           }
         },
-        "moduleName": "aambass-github-io/templates/application.hbs"
+        "moduleName": "aabmass-github-io/templates/application.hbs"
       },
       isEmpty: false,
       arity: 0,
@@ -1120,7 +1120,7 @@ define("aambass-github-io/templates/application", ["exports"], function (exports
     };
   })());
 });
-define("aambass-github-io/templates/head", ["exports"], function (exports) {
+define("aabmass-github-io/templates/head", ["exports"], function (exports) {
   exports["default"] = Ember.HTMLBars.template((function () {
     return {
       meta: {
@@ -1140,7 +1140,7 @@ define("aambass-github-io/templates/head", ["exports"], function (exports) {
             "column": 0
           }
         },
-        "moduleName": "aambass-github-io/templates/head.hbs"
+        "moduleName": "aabmass-github-io/templates/head.hbs"
       },
       isEmpty: false,
       arity: 0,
@@ -1189,8 +1189,8 @@ define("aambass-github-io/templates/head", ["exports"], function (exports) {
 
 /* jshint ignore:start */
 
-define('aambass-github-io/config/environment', ['ember'], function(Ember) {
-  var prefix = 'aambass-github-io';
+define('aabmass-github-io/config/environment', ['ember'], function(Ember) {
+  var prefix = 'aabmass-github-io';
 /* jshint ignore:start */
 
 try {
@@ -1212,7 +1212,7 @@ catch(err) {
 
 /* jshint ignore:start */
 if (!runningTests) {
-  require("aambass-github-io/app")["default"].create({"name":"aambass-github-io","version":"0.0.0+1f2db688"});
+  require("aabmass-github-io/app")["default"].create({"name":"aabmass-github-io","version":"0.0.0+7ebeb5cf"});
 }
 /* jshint ignore:end */
-//# sourceMappingURL=aambass-github-io.map
+//# sourceMappingURL=aabmass-github-io.map

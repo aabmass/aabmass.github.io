@@ -1,4 +1,4 @@
-define('aambass-github-io/tests/app.jshint', ['exports'], function (exports) {
+define('aabmass-github-io/tests/app.jshint', ['exports'], function (exports) {
   'use strict';
 
   QUnit.module('JSHint - app.js');
@@ -7,14 +7,14 @@ define('aambass-github-io/tests/app.jshint', ['exports'], function (exports) {
     assert.ok(true, 'app.js should pass jshint.');
   });
 });
-define('aambass-github-io/tests/helpers/destroy-app', ['exports', 'ember'], function (exports, _ember) {
+define('aabmass-github-io/tests/helpers/destroy-app', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = destroyApp;
 
   function destroyApp(application) {
     _ember['default'].run(application, 'destroy');
   }
 });
-define('aambass-github-io/tests/helpers/destroy-app.jshint', ['exports'], function (exports) {
+define('aabmass-github-io/tests/helpers/destroy-app.jshint', ['exports'], function (exports) {
   'use strict';
 
   QUnit.module('JSHint - helpers/destroy-app.js');
@@ -23,13 +23,13 @@ define('aambass-github-io/tests/helpers/destroy-app.jshint', ['exports'], functi
     assert.ok(true, 'helpers/destroy-app.js should pass jshint.');
   });
 });
-define('aambass-github-io/tests/helpers/module-for-acceptance', ['exports', 'qunit', 'aambass-github-io/tests/helpers/start-app', 'aambass-github-io/tests/helpers/destroy-app'], function (exports, _qunit, _aambassGithubIoTestsHelpersStartApp, _aambassGithubIoTestsHelpersDestroyApp) {
+define('aabmass-github-io/tests/helpers/module-for-acceptance', ['exports', 'qunit', 'aabmass-github-io/tests/helpers/start-app', 'aabmass-github-io/tests/helpers/destroy-app'], function (exports, _qunit, _aabmassGithubIoTestsHelpersStartApp, _aabmassGithubIoTestsHelpersDestroyApp) {
   exports['default'] = function (name) {
     var options = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
 
     (0, _qunit.module)(name, {
       beforeEach: function beforeEach() {
-        this.application = (0, _aambassGithubIoTestsHelpersStartApp['default'])();
+        this.application = (0, _aabmassGithubIoTestsHelpersStartApp['default'])();
 
         if (options.beforeEach) {
           options.beforeEach.apply(this, arguments);
@@ -37,7 +37,7 @@ define('aambass-github-io/tests/helpers/module-for-acceptance', ['exports', 'qun
       },
 
       afterEach: function afterEach() {
-        (0, _aambassGithubIoTestsHelpersDestroyApp['default'])(this.application);
+        (0, _aabmassGithubIoTestsHelpersDestroyApp['default'])(this.application);
 
         if (options.afterEach) {
           options.afterEach.apply(this, arguments);
@@ -46,7 +46,7 @@ define('aambass-github-io/tests/helpers/module-for-acceptance', ['exports', 'qun
     });
   };
 });
-define('aambass-github-io/tests/helpers/module-for-acceptance.jshint', ['exports'], function (exports) {
+define('aabmass-github-io/tests/helpers/module-for-acceptance.jshint', ['exports'], function (exports) {
   'use strict';
 
   QUnit.module('JSHint - helpers/module-for-acceptance.js');
@@ -55,18 +55,18 @@ define('aambass-github-io/tests/helpers/module-for-acceptance.jshint', ['exports
     assert.ok(true, 'helpers/module-for-acceptance.js should pass jshint.');
   });
 });
-define('aambass-github-io/tests/helpers/resolver', ['exports', 'aambass-github-io/resolver', 'aambass-github-io/config/environment'], function (exports, _aambassGithubIoResolver, _aambassGithubIoConfigEnvironment) {
+define('aabmass-github-io/tests/helpers/resolver', ['exports', 'aabmass-github-io/resolver', 'aabmass-github-io/config/environment'], function (exports, _aabmassGithubIoResolver, _aabmassGithubIoConfigEnvironment) {
 
-  var resolver = _aambassGithubIoResolver['default'].create();
+  var resolver = _aabmassGithubIoResolver['default'].create();
 
   resolver.namespace = {
-    modulePrefix: _aambassGithubIoConfigEnvironment['default'].modulePrefix,
-    podModulePrefix: _aambassGithubIoConfigEnvironment['default'].podModulePrefix
+    modulePrefix: _aabmassGithubIoConfigEnvironment['default'].modulePrefix,
+    podModulePrefix: _aabmassGithubIoConfigEnvironment['default'].podModulePrefix
   };
 
   exports['default'] = resolver;
 });
-define('aambass-github-io/tests/helpers/resolver.jshint', ['exports'], function (exports) {
+define('aabmass-github-io/tests/helpers/resolver.jshint', ['exports'], function (exports) {
   'use strict';
 
   QUnit.module('JSHint - helpers/resolver.js');
@@ -75,17 +75,17 @@ define('aambass-github-io/tests/helpers/resolver.jshint', ['exports'], function 
     assert.ok(true, 'helpers/resolver.js should pass jshint.');
   });
 });
-define('aambass-github-io/tests/helpers/start-app', ['exports', 'ember', 'aambass-github-io/app', 'aambass-github-io/config/environment'], function (exports, _ember, _aambassGithubIoApp, _aambassGithubIoConfigEnvironment) {
+define('aabmass-github-io/tests/helpers/start-app', ['exports', 'ember', 'aabmass-github-io/app', 'aabmass-github-io/config/environment'], function (exports, _ember, _aabmassGithubIoApp, _aabmassGithubIoConfigEnvironment) {
   exports['default'] = startApp;
 
   function startApp(attrs) {
     var application = undefined;
 
-    var attributes = _ember['default'].merge({}, _aambassGithubIoConfigEnvironment['default'].APP);
+    var attributes = _ember['default'].merge({}, _aabmassGithubIoConfigEnvironment['default'].APP);
     attributes = _ember['default'].merge(attributes, attrs); // use defaults, but you can override;
 
     _ember['default'].run(function () {
-      application = _aambassGithubIoApp['default'].create(attributes);
+      application = _aabmassGithubIoApp['default'].create(attributes);
       application.setupForTesting();
       application.injectTestHelpers();
     });
@@ -93,7 +93,7 @@ define('aambass-github-io/tests/helpers/start-app', ['exports', 'ember', 'aambas
     return application;
   }
 });
-define('aambass-github-io/tests/helpers/start-app.jshint', ['exports'], function (exports) {
+define('aabmass-github-io/tests/helpers/start-app.jshint', ['exports'], function (exports) {
   'use strict';
 
   QUnit.module('JSHint - helpers/start-app.js');
@@ -102,7 +102,7 @@ define('aambass-github-io/tests/helpers/start-app.jshint', ['exports'], function
     assert.ok(true, 'helpers/start-app.js should pass jshint.');
   });
 });
-define('aambass-github-io/tests/integration/pods/components/menu-bar/component-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+define('aabmass-github-io/tests/integration/pods/components/menu-bar/component-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
 
   (0, _emberQunit.moduleForComponent)('menu-bar', 'Integration | Component | menu bar', {
     integration: true
@@ -242,7 +242,7 @@ define('aambass-github-io/tests/integration/pods/components/menu-bar/component-t
     assert.equal(this.$().text().trim(), 'template block text');
   });
 });
-define('aambass-github-io/tests/integration/pods/components/menu-bar/component-test.jshint', ['exports'], function (exports) {
+define('aabmass-github-io/tests/integration/pods/components/menu-bar/component-test.jshint', ['exports'], function (exports) {
   'use strict';
 
   QUnit.module('JSHint - integration/pods/components/menu-bar/component-test.js');
@@ -251,7 +251,7 @@ define('aambass-github-io/tests/integration/pods/components/menu-bar/component-t
     assert.ok(true, 'integration/pods/components/menu-bar/component-test.js should pass jshint.');
   });
 });
-define('aambass-github-io/tests/pods/blog/route.jshint', ['exports'], function (exports) {
+define('aabmass-github-io/tests/pods/blog/route.jshint', ['exports'], function (exports) {
   'use strict';
 
   QUnit.module('JSHint - pods/blog/route.js');
@@ -260,7 +260,7 @@ define('aambass-github-io/tests/pods/blog/route.jshint', ['exports'], function (
     assert.ok(true, 'pods/blog/route.js should pass jshint.');
   });
 });
-define('aambass-github-io/tests/pods/components/menu-bar/component.jshint', ['exports'], function (exports) {
+define('aabmass-github-io/tests/pods/components/menu-bar/component.jshint', ['exports'], function (exports) {
   'use strict';
 
   QUnit.module('JSHint - pods/components/menu-bar/component.js');
@@ -269,7 +269,7 @@ define('aambass-github-io/tests/pods/components/menu-bar/component.jshint', ['ex
     assert.ok(true, 'pods/components/menu-bar/component.js should pass jshint.');
   });
 });
-define('aambass-github-io/tests/pods/index/route.jshint', ['exports'], function (exports) {
+define('aabmass-github-io/tests/pods/index/route.jshint', ['exports'], function (exports) {
   'use strict';
 
   QUnit.module('JSHint - pods/index/route.js');
@@ -278,7 +278,7 @@ define('aambass-github-io/tests/pods/index/route.jshint', ['exports'], function 
     assert.ok(true, 'pods/index/route.js should pass jshint.');
   });
 });
-define('aambass-github-io/tests/resolver.jshint', ['exports'], function (exports) {
+define('aabmass-github-io/tests/resolver.jshint', ['exports'], function (exports) {
   'use strict';
 
   QUnit.module('JSHint - resolver.js');
@@ -287,7 +287,7 @@ define('aambass-github-io/tests/resolver.jshint', ['exports'], function (exports
     assert.ok(true, 'resolver.js should pass jshint.');
   });
 });
-define('aambass-github-io/tests/router.jshint', ['exports'], function (exports) {
+define('aabmass-github-io/tests/router.jshint', ['exports'], function (exports) {
   'use strict';
 
   QUnit.module('JSHint - router.js');
@@ -296,11 +296,11 @@ define('aambass-github-io/tests/router.jshint', ['exports'], function (exports) 
     assert.ok(true, 'router.js should pass jshint.');
   });
 });
-define('aambass-github-io/tests/test-helper', ['exports', 'aambass-github-io/tests/helpers/resolver', 'ember-qunit'], function (exports, _aambassGithubIoTestsHelpersResolver, _emberQunit) {
+define('aabmass-github-io/tests/test-helper', ['exports', 'aabmass-github-io/tests/helpers/resolver', 'ember-qunit'], function (exports, _aabmassGithubIoTestsHelpersResolver, _emberQunit) {
 
-  (0, _emberQunit.setResolver)(_aambassGithubIoTestsHelpersResolver['default']);
+  (0, _emberQunit.setResolver)(_aabmassGithubIoTestsHelpersResolver['default']);
 });
-define('aambass-github-io/tests/test-helper.jshint', ['exports'], function (exports) {
+define('aabmass-github-io/tests/test-helper.jshint', ['exports'], function (exports) {
   'use strict';
 
   QUnit.module('JSHint - test-helper.js');
@@ -309,7 +309,7 @@ define('aambass-github-io/tests/test-helper.jshint', ['exports'], function (expo
     assert.ok(true, 'test-helper.js should pass jshint.');
   });
 });
-define('aambass-github-io/tests/unit/pods/blog/route-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+define('aabmass-github-io/tests/unit/pods/blog/route-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
 
   (0, _emberQunit.moduleFor)('route:blog', 'Unit | Route | blog', {
     // Specify the other units that are required for this test.
@@ -321,7 +321,7 @@ define('aambass-github-io/tests/unit/pods/blog/route-test', ['exports', 'ember-q
     assert.ok(route);
   });
 });
-define('aambass-github-io/tests/unit/pods/blog/route-test.jshint', ['exports'], function (exports) {
+define('aabmass-github-io/tests/unit/pods/blog/route-test.jshint', ['exports'], function (exports) {
   'use strict';
 
   QUnit.module('JSHint - unit/pods/blog/route-test.js');
@@ -330,7 +330,7 @@ define('aambass-github-io/tests/unit/pods/blog/route-test.jshint', ['exports'], 
     assert.ok(true, 'unit/pods/blog/route-test.js should pass jshint.');
   });
 });
-define('aambass-github-io/tests/unit/pods/index/route-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+define('aabmass-github-io/tests/unit/pods/index/route-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
 
   (0, _emberQunit.moduleFor)('route:index', 'Unit | Route | index', {
     // Specify the other units that are required for this test.
@@ -342,7 +342,7 @@ define('aambass-github-io/tests/unit/pods/index/route-test', ['exports', 'ember-
     assert.ok(route);
   });
 });
-define('aambass-github-io/tests/unit/pods/index/route-test.jshint', ['exports'], function (exports) {
+define('aabmass-github-io/tests/unit/pods/index/route-test.jshint', ['exports'], function (exports) {
   'use strict';
 
   QUnit.module('JSHint - unit/pods/index/route-test.js');
@@ -353,7 +353,7 @@ define('aambass-github-io/tests/unit/pods/index/route-test.jshint', ['exports'],
 });
 /* jshint ignore:start */
 
-require('aambass-github-io/tests/test-helper');
+require('aabmass-github-io/tests/test-helper');
 EmberENV.TESTS_FILE_LOADED = true;
 
 /* jshint ignore:end */

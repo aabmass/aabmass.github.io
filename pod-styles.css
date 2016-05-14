@@ -1,17 +1,17 @@
-.menu-bar-c2f17a3b .dockednavbar {
+.menu-bar-87a9c846 .dockednavbar {
 
 }
 
-.menu-bar-c2f17a3b nav {
+.menu-bar-87a9c846 nav {
 
 }
 
-.menu-bar-c2f17a3b nav ul {
+.menu-bar-87a9c846 nav ul {
 
 }
 
 
-.menu-bar-c2f17a3b nav ul li {
+.menu-bar-87a9c846 nav ul li {
     text-transform: uppercase;
     font-size: 11px;
     font-weight: 600;
@@ -24,18 +24,18 @@
     color: #222;
 }
 
-.menu-bar-c2f17a3b nav ul li a:link {
+.menu-bar-87a9c846 nav ul li a:link {
 
 }
 
-.menu-bar-c2f17a3b nav ul li a:hover {
+.menu-bar-87a9c846 nav ul li a:hover {
 
 }
 
 /** select media queries section */
 /* Larger than tablet */
 @media (min-width: 750px) {
-    .menu-bar-c2f17a3b #header {
+    .menu-bar-87a9c846 #header {
         width: 100%;
         height: 8rem;
         background: #fff;
@@ -44,32 +44,32 @@
         border-bottom: 1px solid #eee;
     }
 
-    .menu-bar-c2f17a3b .dockednavbar {
+    .menu-bar-87a9c846 .dockednavbar {
         position: fixed;
         top: 0;
         left: 0;
     }
 
-    .menu-bar-c2f17a3b nav ul li {
+    .menu-bar-87a9c846 nav ul li {
         display: inline-block;
         padding-left: 2px;
         padding-right: 2px;
     }
 
     /* make the first element have bigger text */
-    .menu-bar-c2f17a3b nav ul li:first-child {
+    .menu-bar-87a9c846 nav ul li:first-child {
         font-weight: 800;
         margin-right: 5rem;
     }
 
-    .menu-bar-c2f17a3b nav ul {
+    .menu-bar-87a9c846 nav ul {
         list-style: none;
         display: block;
     }
 
     /* space the header from the following div a little to not cover it up*/
     /*#header + div.container {*/
-    .menu-bar-c2f17a3b div#main {
+    .menu-bar-87a9c846 div#main {
         /* ths is 10rem plus the 8rem docked navbar */
         margin-top: 10rem;
     }
