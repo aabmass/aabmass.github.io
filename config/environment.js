@@ -2,8 +2,8 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'aambass-github-io',
-    podModulePrefix: 'aambass-github-io/pods',
+    modulePrefix: 'aabmass-github-io',
+    podModulePrefix: 'aabmass-github-io/pods',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
