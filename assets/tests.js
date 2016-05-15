@@ -1,3 +1,12 @@
+define('aabmass-github-io/tests/adapters/application.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - adapters/application.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'adapters/application.js should pass jshint.');
+  });
+});
 define('aabmass-github-io/tests/app.jshint', ['exports'], function (exports) {
   'use strict';
 
@@ -251,6 +260,24 @@ define('aabmass-github-io/tests/integration/pods/components/menu-bar/component-t
     assert.ok(true, 'integration/pods/components/menu-bar/component-test.js should pass jshint.');
   });
 });
+define('aabmass-github-io/tests/pods/blog/index/route.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - pods/blog/index/route.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'pods/blog/index/route.js should pass jshint.');
+  });
+});
+define('aabmass-github-io/tests/pods/blog/post/route.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - pods/blog/post/route.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'pods/blog/post/route.js should pass jshint.');
+  });
+});
 define('aabmass-github-io/tests/pods/blog/route.jshint', ['exports'], function (exports) {
   'use strict';
 
@@ -258,6 +285,15 @@ define('aabmass-github-io/tests/pods/blog/route.jshint', ['exports'], function (
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'pods/blog/route.js should pass jshint.');
+  });
+});
+define('aabmass-github-io/tests/pods/blog-post/model.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - pods/blog-post/model.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'pods/blog-post/model.js should pass jshint.');
   });
 });
 define('aabmass-github-io/tests/pods/components/menu-bar/component.jshint', ['exports'], function (exports) {
@@ -309,6 +345,48 @@ define('aabmass-github-io/tests/test-helper.jshint', ['exports'], function (expo
     assert.ok(true, 'test-helper.js should pass jshint.');
   });
 });
+define('aabmass-github-io/tests/unit/pods/blog/index/route-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+
+  (0, _emberQunit.moduleFor)('route:blog/index', 'Unit | Route | blog/index', {
+    // Specify the other units that are required for this test.
+    // needs: ['controller:foo']
+  });
+
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var route = this.subject();
+    assert.ok(route);
+  });
+});
+define('aabmass-github-io/tests/unit/pods/blog/index/route-test.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - unit/pods/blog/index/route-test.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/pods/blog/index/route-test.js should pass jshint.');
+  });
+});
+define('aabmass-github-io/tests/unit/pods/blog/post/route-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+
+  (0, _emberQunit.moduleFor)('route:blog/post', 'Unit | Route | blog/post', {
+    // Specify the other units that are required for this test.
+    // needs: ['controller:foo']
+  });
+
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var route = this.subject();
+    assert.ok(route);
+  });
+});
+define('aabmass-github-io/tests/unit/pods/blog/post/route-test.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - unit/pods/blog/post/route-test.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/pods/blog/post/route-test.js should pass jshint.');
+  });
+});
 define('aabmass-github-io/tests/unit/pods/blog/route-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
 
   (0, _emberQunit.moduleFor)('route:blog', 'Unit | Route | blog', {
@@ -328,6 +406,28 @@ define('aabmass-github-io/tests/unit/pods/blog/route-test.jshint', ['exports'], 
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/pods/blog/route-test.js should pass jshint.');
+  });
+});
+define('aabmass-github-io/tests/unit/pods/blog-post/model-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+
+  (0, _emberQunit.moduleForModel)('blog-post', 'Unit | Model | blog post', {
+    // Specify the other units that are required for this test.
+    needs: []
+  });
+
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var model = this.subject();
+    // let store = this.store();
+    assert.ok(!!model);
+  });
+});
+define('aabmass-github-io/tests/unit/pods/blog-post/model-test.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - unit/pods/blog-post/model-test.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/pods/blog-post/model-test.js should pass jshint.');
   });
 });
 define('aabmass-github-io/tests/unit/pods/index/route-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {

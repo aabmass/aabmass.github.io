@@ -1,0 +1,25 @@
+{
+  "blogPosts": [
+    {
+      "id": "1",
+      "title": "The Fat Duck Awakens",
+      "subtitle": "The story of a quacker",
+      "pubDate:": "Sun May 15 2016 02:37:38 GMT-0400 (EDT)",
+      "body": "At first he was afraid, he was petrified....Some more here."
+    },
+    {
+      "id": "2",
+      "title": "Roo is a Kang",
+      "subtitle": "The story of a quacker",
+      "pubDate:": "Sun May 15 2016 02:37:38 GMT-0400 (EDT)",
+      "body": "At first he was afraid, he was petrified....Some more here."
+    },
+    {
+      "id": "3",
+      "title": "The Duckerton",
+      "subtitle": "The story of a quacker",
+      "pubDate:": "Sun May 15 2016 02:37:38 GMT-0400 (EDT)",
+      "body": "At first he was afraid, he was petrified....Some more here."
+    }
+  ]
+}

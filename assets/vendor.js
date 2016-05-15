@@ -83826,7 +83826,7 @@ define('ember-resolver/utils/module-registry', ['exports', 'ember'], function (e
 /* jshint ignore:end */
 //# sourceMappingURL=vendor.map 
 
-Ember.COMPONENT_CSS_LOOKUP = {"menu-bar":"menu-bar-87a9c846"};
+Ember.COMPONENT_CSS_LOOKUP = {"menu-bar":"menu-bar-75e6bb0d"};
 (function() {
   function componentHasBeenReopened(Component, className) {
     return Component.prototype.classNames.indexOf(className) > -1;

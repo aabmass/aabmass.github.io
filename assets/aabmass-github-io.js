@@ -3,6 +3,15 @@
 
 /* jshint ignore:end */
 
+define('aabmass-github-io/adapters/application', ['exports', 'ember-data'], function (exports, _emberData) {
+  exports['default'] = _emberData['default'].RESTAdapter.extend({
+    /* override buildURL to give the simpler scheme */
+    buildURL: function buildURL() {
+      //  simply append .json
+      return this._super.apply(this, arguments) + '.json';
+    }
+  });
+});
 define('aabmass-github-io/app', ['exports', 'ember', 'aabmass-github-io/resolver', 'ember-load-initializers', 'aabmass-github-io/config/environment'], function (exports, _ember, _aabmassGithubIoResolver, _emberLoadInitializers, _aabmassGithubIoConfigEnvironment) {
 
   var App = undefined;
@@ -235,16 +244,108 @@ define("aabmass-github-io/instance-initializers/ember-data", ["exports", "ember-
     initialize: _emberDataPrivateInstanceInitializersInitializeStoreService["default"]
   };
 });
-define('aabmass-github-io/pods/blog/route', ['exports', 'ember'], function (exports, _ember) {
-  exports['default'] = _ember['default'].Route.extend({});
+define('aabmass-github-io/pods/blog/index/route', ['exports', 'ember'], function (exports, _ember) {
+  exports['default'] = _ember['default'].Route.extend({
+    model: function model() {
+      return this.store.findAll('blog-post');
+    }
+  });
 });
-define("aabmass-github-io/pods/blog/template", ["exports"], function (exports) {
+define("aabmass-github-io/pods/blog/index/template", ["exports"], function (exports) {
   exports["default"] = Ember.HTMLBars.template((function () {
+    var child0 = (function () {
+      var child0 = (function () {
+        return {
+          meta: {
+            "fragmentReason": false,
+            "revision": "Ember@2.3.0",
+            "loc": {
+              "source": null,
+              "start": {
+                "line": 5,
+                "column": 6
+              },
+              "end": {
+                "line": 5,
+                "column": 52
+              }
+            },
+            "moduleName": "aabmass-github-io/pods/blog/index/template.hbs"
+          },
+          isEmpty: false,
+          arity: 0,
+          cachedFragment: null,
+          hasRendered: false,
+          buildFragment: function buildFragment(dom) {
+            var el0 = dom.createDocumentFragment();
+            var el1 = dom.createComment("");
+            dom.appendChild(el0, el1);
+            return el0;
+          },
+          buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+            var morphs = new Array(1);
+            morphs[0] = dom.createMorphAt(fragment, 0, 0, contextualElement);
+            dom.insertBoundary(fragment, 0);
+            dom.insertBoundary(fragment, null);
+            return morphs;
+          },
+          statements: [["content", "post.title", ["loc", [null, [5, 38], [5, 52]]]]],
+          locals: [],
+          templates: []
+        };
+      })();
+      return {
+        meta: {
+          "fragmentReason": false,
+          "revision": "Ember@2.3.0",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 3,
+              "column": 2
+            },
+            "end": {
+              "line": 7,
+              "column": 2
+            }
+          },
+          "moduleName": "aabmass-github-io/pods/blog/index/template.hbs"
+        },
+        isEmpty: false,
+        arity: 1,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode("    ");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createElement("li");
+          var el2 = dom.createTextNode("\n      ");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createComment("");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createTextNode("\n    ");
+          dom.appendChild(el1, el2);
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode("\n");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+          var morphs = new Array(1);
+          morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1]), 1, 1);
+          return morphs;
+        },
+        statements: [["block", "link-to", ["blog.post", ["get", "post.id", ["loc", [null, [5, 29], [5, 36]]]]], [], 0, null, ["loc", [null, [5, 6], [5, 64]]]]],
+        locals: ["post"],
+        templates: [child0]
+      };
+    })();
     return {
       meta: {
         "fragmentReason": {
           "name": "missing-wrapper",
-          "problems": ["wrong-type"]
+          "problems": ["multiple-nodes", "wrong-type"]
         },
         "revision": "Ember@2.3.0",
         "loc": {
@@ -254,7 +355,157 @@ define("aabmass-github-io/pods/blog/template", ["exports"], function (exports) {
             "column": 0
           },
           "end": {
-            "line": 2,
+            "line": 11,
+            "column": 0
+          }
+        },
+        "moduleName": "aabmass-github-io/pods/blog/index/template.hbs"
+      },
+      isEmpty: false,
+      arity: 0,
+      cachedFragment: null,
+      hasRendered: false,
+      buildFragment: function buildFragment(dom) {
+        var el0 = dom.createDocumentFragment();
+        var el1 = dom.createElement("h4");
+        var el2 = dom.createTextNode("All Posts:");
+        dom.appendChild(el1, el2);
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createElement("ul");
+        var el2 = dom.createTextNode("\n");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createComment("");
+        dom.appendChild(el1, el2);
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n\n");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createComment("");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
+        return el0;
+      },
+      buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+        var morphs = new Array(2);
+        morphs[0] = dom.createMorphAt(dom.childAt(fragment, [2]), 1, 1);
+        morphs[1] = dom.createMorphAt(fragment, 4, 4, contextualElement);
+        return morphs;
+      },
+      statements: [["block", "each", [["get", "model", ["loc", [null, [3, 10], [3, 15]]]]], [], 0, null, ["loc", [null, [3, 2], [7, 11]]]], ["content", "outlet", ["loc", [null, [10, 0], [10, 10]]]]],
+      locals: [],
+      templates: [child0]
+    };
+  })());
+});
+define('aabmass-github-io/pods/blog/post/route', ['exports', 'ember'], function (exports, _ember) {
+  exports['default'] = _ember['default'].Route.extend({
+    model: function model(params) {
+      return this.store.findRecord('blog-post', params.id);
+    }
+  });
+});
+define("aabmass-github-io/pods/blog/post/template", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template((function () {
+    return {
+      meta: {
+        "fragmentReason": {
+          "name": "missing-wrapper",
+          "problems": ["multiple-nodes", "wrong-type"]
+        },
+        "revision": "Ember@2.3.0",
+        "loc": {
+          "source": null,
+          "start": {
+            "line": 1,
+            "column": 0
+          },
+          "end": {
+            "line": 9,
+            "column": 0
+          }
+        },
+        "moduleName": "aabmass-github-io/pods/blog/post/template.hbs"
+      },
+      isEmpty: false,
+      arity: 0,
+      cachedFragment: null,
+      hasRendered: false,
+      buildFragment: function buildFragment(dom) {
+        var el0 = dom.createDocumentFragment();
+        var el1 = dom.createElement("h2");
+        var el2 = dom.createComment("");
+        dom.appendChild(el1, el2);
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createElement("h3");
+        var el2 = dom.createComment("");
+        dom.appendChild(el1, el2);
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createElement("div");
+        dom.setAttribute(el1, "class", "body");
+        var el2 = dom.createTextNode("\n  ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createComment("");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n");
+        dom.appendChild(el1, el2);
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createElement("p");
+        var el2 = dom.createTextNode("Published on ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createComment("");
+        dom.appendChild(el1, el2);
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n\n");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createComment("");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
+        return el0;
+      },
+      buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+        var morphs = new Array(5);
+        morphs[0] = dom.createMorphAt(dom.childAt(fragment, [0]), 0, 0);
+        morphs[1] = dom.createMorphAt(dom.childAt(fragment, [2]), 0, 0);
+        morphs[2] = dom.createMorphAt(dom.childAt(fragment, [4]), 1, 1);
+        morphs[3] = dom.createMorphAt(dom.childAt(fragment, [6]), 1, 1);
+        morphs[4] = dom.createMorphAt(fragment, 8, 8, contextualElement);
+        return morphs;
+      },
+      statements: [["content", "model.title", ["loc", [null, [1, 4], [1, 19]]]], ["content", "model.subtitle", ["loc", [null, [2, 4], [2, 22]]]], ["content", "model.body", ["loc", [null, [4, 2], [4, 16]]]], ["content", "model.pubDate", ["loc", [null, [6, 16], [6, 33]]]], ["content", "outlet", ["loc", [null, [8, 0], [8, 10]]]]],
+      locals: [],
+      templates: []
+    };
+  })());
+});
+define('aabmass-github-io/pods/blog/route', ['exports', 'ember'], function (exports, _ember) {
+  exports['default'] = _ember['default'].Route.extend({});
+});
+define("aabmass-github-io/pods/blog/template", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template((function () {
+    return {
+      meta: {
+        "fragmentReason": {
+          "name": "missing-wrapper",
+          "problems": ["wrong-type", "multiple-nodes"]
+        },
+        "revision": "Ember@2.3.0",
+        "loc": {
+          "source": null,
+          "start": {
+            "line": 1,
+            "column": 0
+          },
+          "end": {
+            "line": 4,
             "column": 0
           }
         },
@@ -270,24 +521,46 @@ define("aabmass-github-io/pods/blog/template", ["exports"], function (exports) {
         dom.appendChild(el0, el1);
         var el1 = dom.createTextNode("\n");
         dom.appendChild(el0, el1);
+        var el1 = dom.createElement("h1");
+        var el2 = dom.createTextNode("This is the blog!");
+        dom.appendChild(el1, el2);
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createComment("");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
         return el0;
       },
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-        var morphs = new Array(1);
+        var morphs = new Array(2);
         morphs[0] = dom.createMorphAt(fragment, 0, 0, contextualElement);
+        morphs[1] = dom.createMorphAt(fragment, 4, 4, contextualElement);
         dom.insertBoundary(fragment, 0);
         return morphs;
       },
-      statements: [["content", "outlet", ["loc", [null, [1, 0], [1, 10]]]]],
+      statements: [["inline", "page-title", ["Blog"], [], ["loc", [null, [1, 0], [1, 16]]]], ["content", "outlet", ["loc", [null, [3, 0], [3, 10]]]]],
       locals: [],
       templates: []
     };
   })());
 });
+define('aabmass-github-io/pods/blog-post/model', ['exports', 'ember-data/model', 'ember-data/attr'], function (exports, _emberDataModel, _emberDataAttr) {
+  exports['default'] = _emberDataModel['default'].extend({
+    title: (0, _emberDataAttr['default'])('string'),
+    subtitle: (0, _emberDataAttr['default'])('string'),
+    pubDate: (0, _emberDataAttr['default'])('date'),
+    body: (0, _emberDataAttr['default'])('string')
+  });
+});
 define('aabmass-github-io/pods/components/menu-bar/component', ['exports', 'ember'], function (exports, _ember) {
 
   var menusArr = [{
     entryName: 'My Github',
+    link: 'https://github.com/aabmass'
+  }, {
+    entryName: 'Portfolio',
     link: 'https://github.com/aabmass'
   }, {
     entryName: 'Blog',
@@ -1020,7 +1293,11 @@ define('aabmass-github-io/router', ['exports', 'ember', 'aabmass-github-io/confi
   });
 
   Router.map(function () {
-    this.route('blog');
+    this.route('blog', function () {
+      this.route('post', {
+        path: '/post/:id'
+      });
+    });
   });
 
   exports['default'] = Router;
@@ -1212,7 +1489,7 @@ catch(err) {
 
 /* jshint ignore:start */
 if (!runningTests) {
-  require("aabmass-github-io/app")["default"].create({"name":"aabmass-github-io","version":"0.0.0+7ebeb5cf"});
+  require("aabmass-github-io/app")["default"].create({"name":"aabmass-github-io","version":"0.0.0+0f5589ac"});
 }
 /* jshint ignore:end */
 //# sourceMappingURL=aabmass-github-io.map
