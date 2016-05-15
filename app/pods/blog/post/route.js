@@ -2,6 +2,6 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model(params) {
-    return params.id;
+    return this.store.findRecord('blog-post', params.id);
   }
 });
