@@ -6,6 +6,10 @@ var menusArr = [
     link: 'https://github.com/aabmass'
   },
   {
+    entryName: 'Portfolio',
+    link: 'https://github.com/aabmass'
+  },
+  {
     entryName: 'Blog',
     route: 'blog'
   }
