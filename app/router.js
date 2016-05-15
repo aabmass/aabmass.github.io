@@ -11,6 +11,11 @@ Router.map(function() {
       path: '/post/:id'
     });
   });
+
+  // this is the catch-all 404 route
+  this.route('page-not-found', {
+    path: '*path'
+  });
 });
 
 export default Router;
