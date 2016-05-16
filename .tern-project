@@ -1,0 +1,17 @@
+{
+  "ecmaVersion": 6,
+  "libs": [
+    "browser",
+    "jquery"
+  ],
+  "loadEagerly": [
+    "bower_components/ember/ember.debug.json"
+  ],
+  "plugins": {
+    "node": {},
+    "es_modules": {
+      "baseURL": "./",
+      "paths": {}
+    }
+  }
+}
