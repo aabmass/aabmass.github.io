@@ -1,5 +1,7 @@
-.dockednavbar {
-
+/* make button within this component have less padding */
+.button {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
 }
 
 nav {
@@ -7,7 +9,7 @@ nav {
 }
 
 nav ul {
-
+    list-style: none;
 }
 
 
@@ -16,12 +18,19 @@ nav ul li {
     font-size: 11px;
     font-weight: 600;
     letter-spacing: .2rem;
-    margin-right: 1rem;
+    margin-right: 2px;
     margin-top: 5px;
     margin-bottom: 5px;
     text-decoration: none;
     line-height: 6.5rem;
     color: #222;
+}
+
+/* make the first element have bigger text */
+nav ul li:first-child {
+    font-size: 15px;
+    font-weight: 800;
+    margin-right: 4em;
 }
 
 nav ul li a:link {
@@ -35,37 +44,11 @@ nav ul li a:hover {
 /** select media queries section */
 /* Larger than tablet */
 @media (min-width: 750px) {
-    /*
-    #header {
-        width: 100%;
-        height: 8rem;
-        background: #fff;
-        z-index: 99;
-        border-top: 1px solid #eee;
-        border-bottom: 1px solid #eee;
-    }
-    */
-
-    .dockednavbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-    }
-
     nav ul li {
         display: inline-block;
-        padding-left: 2px;
-        padding-right: 2px;
-    }
-
-    /* make the first element have bigger text */
-    nav ul li:first-child {
-        font-weight: 800;
-        margin-right: 5rem;
     }
 
     nav ul {
-        list-style: none;
         display: block;
     }
 }
