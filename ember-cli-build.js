@@ -24,5 +24,9 @@ module.exports = function(defaults) {
   app.import('bower_components/skeleton/css/normalize.css');
   app.import('bower_components/skeleton/css/skeleton.css');
 
+  // jPushMenu
+  app.import('bower_components/jPushMenu/css/jPushMenu.css')
+  app.import('bower_components/jPushMenu/js/jPushMenu.js')
+
   return app.toTree();
 };

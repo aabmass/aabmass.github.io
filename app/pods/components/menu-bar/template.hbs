@@ -3,20 +3,40 @@
   <div class="container">
     <nav>
       <ul>
-        <li>Aaron Abbott</li>
-        <li>{{#link-to 'index' class="button button-primary"}}Home{{/link-to}}</li>
-        {{#each menus as |menuEntry|}}
         <li>
-          {{#if menuEntry.route}}
-            {{#link-to menuEntry.route class="button"}}{{menuEntry.entryName}}{{/link-to}}
-          {{else if menuEntry.link}}
-          <a class="button" href="{{menuEntry.link}}">{{menuEntry.entryName}}</a>
-          {{else}}
-            {{menuEntry.entryName}}
-          {{/if}}
+          {{side-menu-button class="spreadout"}}
         </li>
-        {{/each}}
+        <li class="title spreadout">Aaron Abbott</li>
+        <span class="large-only">
+          <li>{{#link-to 'index' class="button button-primary"}}Home{{/link-to}}</li>
+          {{#each menus as |menuEntry|}}
+          <li>
+            {{#if menuEntry.route}}
+              {{#link-to menuEntry.route class="button"}}{{menuEntry.entryName}}{{/link-to}}
+            {{else if menuEntry.link}}
+            <a class="button" href="{{menuEntry.link}}">{{menuEntry.entryName}}</a>
+            {{else}}
+              {{menuEntry.entryName}}
+            {{/if}}
+          </li>
+          {{/each}}
+        </span>
       </ul>
     </nav>
   </div>
 </div>
+
+<!-- JPushMenu for smaller screens -->
+<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left">
+  <h3>Aaron Abbott</h3>
+  {{#link-to 'index'}}Home{{/link-to}}
+  {{#each menus as |menuEntry|}}
+    {{#if menuEntry.route}}
+      {{#link-to menuEntry.route}}{{menuEntry.entryName}}{{/link-to}}
+    {{else if menuEntry.link}}
+    <a href="{{menuEntry.link}}">{{menuEntry.entryName}}</a>
+    {{else}}
+      {{menuEntry.entryName}}
+    {{/if}}
+  {{/each}}
+</nav>
