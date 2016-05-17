@@ -16,10 +16,5 @@ var menusArr = [
 ];
 
 export default Ember.Component.extend({
-  menus: menusArr,
-
-  didInsertElement() {
-    // initialize the jPushMenu with jQuery
-    this.$('.toggle-menu').jPushMenu();
-  }
+  menus: menusArr
 });

@@ -25,9 +25,9 @@ module.exports = function(defaults) {
   app.import('bower_components/skeleton/css/skeleton.css');
 
   /* jPushMenu */
-  // don't import, the css, we override almost everything
-  // app.import('bower_components/jPushMenu/css/jPushMenu.css')
-  app.import('bower_components/jPushMenu/js/jPushMenu.js')
+  // don't import, the css, we override almost everything and
+  // import it in app.css
+  app.import('vendor/jPushMenu.js');
 
   return app.toTree();
 };

@@ -35,7 +35,7 @@
     {{#if menuEntry.route}}
       {{#link-to menuEntry.route}}{{menuEntry.entryName}}{{/link-to}}
     {{else if menuEntry.link}}
-    <a href="{{menuEntry.link}}">{{menuEntry.entryName}}</a>
+      <a href="{{menuEntry.link}}">{{menuEntry.entryName}}</a>
     {{else}}
       {{menuEntry.entryName}}
     {{/if}}
