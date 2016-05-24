@@ -31,9 +31,10 @@ class BlogLibrarian(object):
         the other methods try to create files in those directories
         """
         deepest_json_folder = os.path.join(options["output_base"], "blogPosts")
-        deepest_content_folder = os.path.join(deepest_json_folder, options["content_directory_name"])
+        deepest_content_folder = os.path.join(options["output_base"], options["content_directory_name"])
 
         # mkdir -p deepest
+        os.makedirs(deepest_json_folder, exist_ok=True)
         os.makedirs(deepest_content_folder, exist_ok=True)
 
     def clean(self):
@@ -47,12 +48,7 @@ class BlogLibrarian(object):
             self.posts.add((post_path, frontmatter.load(post_path)))
 
     def output_all(self):
-        """Runs both of the methods below for creating the complete faux REST API"""
-        self.output_json_models()
-        self.output_blog_content()
-
-    def output_json_models(self):
-        """Outputs the json models that make up the faux REST API"""
+        """Outputs the whole blog faux api and content"""
         
         # Load this index up with blog objects in the format expected
         # as a REST endpoint. Then it can be serialized directly to json
@@ -68,8 +64,14 @@ class BlogLibrarian(object):
             model["id"] = index
 
             # add in the determined resource url for the content
-            # also, not using os.path.join since browser will use "/"
-            model['contentFile'] = "/".join(["blogPosts", "{}.json".format(index)])
+            content_file_name = os.path.basename(post_path)
+            # not using os.path.join since browser will use "/"
+            model['contentFile'] = "/".join([
+                options["api_base"],
+                options["content_directory_name"],
+                content_file_name
+            ])
+
             posts_index['blogPosts'].append(model)
 
             # now write this model to it's appropriate file
@@ -77,14 +79,19 @@ class BlogLibrarian(object):
             with open(model_json_path, "w+") as model_json_file:
                 json.dump({"blogPost": model}, model_json_file)
 
+            # now write the de-frontmattered content to contentFile
+            content_path = os.path.join(
+                options["output_base"],
+                options["content_directory_name"],
+                content_file_name
+            )
+            with open(content_path, "w+") as content_file:
+                content_file.write(post_frontmatter.content)
+
         # finally, write posts_index as json to it's proper path
         index_json_path = os.path.join(options["output_base"], "blogPosts.json")
         with open(index_json_path, "w+") as index_json_file:
             json.dump(posts_index, index_json_file)
-
-    def output_blog_content(self):
-        """Outputs the actual blog content that the json models render link to"""
-        pass
 
 def main():
     matches = glob.glob("{}/*.{}".format(
