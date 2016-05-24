@@ -11,7 +11,7 @@ import json
 options = {
     "blog_pages_directory": "blogPages",
     "page_extension": "md",
-    "api_base": "",
+    "api_base": "fauxapi",
     "content_directory_name": "content",
 }
 # and computed options entries
@@ -21,7 +21,7 @@ class BlogLibrarian(object):
     def __init__(self, post_paths):
         self.make_dirs()
 
-        self.posts = []
+        self.posts = set()
         self.load_posts(post_paths)
 
     def make_dirs(self):
@@ -44,7 +44,7 @@ class BlogLibrarian(object):
     def load_posts(self, post_paths):
         for post_path in post_paths:
             # load tuples of (path, front matter)
-            self.posts.append((post_path, frontmatter.load(post_path)))
+            self.posts.add((post_path, frontmatter.load(post_path)))
 
     def output_all(self):
         """Runs both of the methods below for creating the complete faux REST API"""
@@ -63,6 +63,9 @@ class BlogLibrarian(object):
         # use the indices to assign model id's
         for index, (post_path, post_frontmatter) in enumerate(self.posts):
             model = post_frontmatter.metadata
+
+            # add in the id
+            model["id"] = index
 
             # add in the determined resource url for the content
             # also, not using os.path.join since browser will use "/"
