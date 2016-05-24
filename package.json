@@ -34,12 +34,13 @@
     "ember-cli-sri": "^2.1.0",
     "ember-cli-uglify": "^1.2.0",
     "ember-component-css": "0.2.0-beta.6",
-    "ember-page-title": "3.0.2",
     "ember-data": "^2.5.0",
     "ember-export-application-global": "^1.0.5",
     "ember-load-initializers": "^0.5.1",
+    "ember-page-title": "3.0.2",
     "ember-resolver": "^2.0.3",
     "liquid-fire": "0.23.1",
-    "loader.js": "^4.0.1"
+    "loader.js": "^4.0.1",
+    "ui-markdown": "0.1.7"
   }
 }
