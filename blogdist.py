@@ -63,6 +63,9 @@ class BlogLibrarian(object):
             # add in the id
             model["id"] = index
 
+            # change the datetime object to an isoformat string
+            model["pubDate"] = model["pubDate"].isoformat()
+
             # add in the determined resource url for the content
             content_file_name = os.path.basename(post_path)
             # not using os.path.join since browser will use "/"
