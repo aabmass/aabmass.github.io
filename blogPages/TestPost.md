@@ -1,6 +1,7 @@
 ---
-layout: post
 title: Blogging Like a Hacker
+subtitle: A Treatise
+pubDate: January 2nd, 1999... 10 PM
 ---
 
 Hello from a Post!
