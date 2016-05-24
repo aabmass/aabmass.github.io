@@ -14,7 +14,7 @@
             {{#if menuEntry.route}}
               {{#link-to menuEntry.route class="button"}}{{menuEntry.entryName}}{{/link-to}}
             {{else if menuEntry.link}}
-            <a class="button" href="{{menuEntry.link}}">{{menuEntry.entryName}}</a>
+            <a class="button" href="{{menuEntry.link}}" target="_blank">{{menuEntry.entryName}}</a>
             {{else}}
               {{menuEntry.entryName}}
             {{/if}}
