@@ -1,6 +1,6 @@
 <h2>{{model.title}}</h2>
 <h3>{{model.subtitle}}</h3>
 <div class="body">
-  {{model.body}}
+  {{markdown-file url=model.contentFile}}
 </div>
 <p>Published on {{model.pubDate}}</p>
