@@ -5,5 +5,5 @@ export default Model.extend({
   title: attr('string'),
   subtitle: attr('string'),
   pubDate: attr('date'),
-  body: attr('string')
+  contentFile: attr('string')
 });
