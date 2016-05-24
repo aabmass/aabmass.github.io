@@ -6,6 +6,9 @@
 /public/**/*.json
 /public/**/*.md
 
+# fake posts for testing
+*.fakepost.md
+
 # dependencies
 /node_modules
 /bower_components
