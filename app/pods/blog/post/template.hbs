@@ -1,6 +1,11 @@
 <h2>{{model.title}}</h2>
 <h3>{{model.subtitle}}</h3>
 <div class="body">
-  {{markdown-file url=model.contentFile}}
+  {{#liquid-spacer growDuration=1250}}
+    {{#markdown-file url=model.contentFile}}
+      {{! Rendered while the content is fetched }}
+      <div>Rendering Markdown...</div>
+    {{/markdown-file}}
+  {{/liquid-spacer}}
 </div>
 <p>Published on {{model.pubDate}}</p>
