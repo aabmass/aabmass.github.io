@@ -1,16 +1,16 @@
 {{title model.title}}
 
-{{#link-to 'blog.index'}}<i class="fa fa-long-arrow-left" aria-hidden="true"></i> Back{{/link-to}}
+{{#link-to 'blog.index' class="button"}}<i class="fa fa-long-arrow-left" aria-hidden="true"></i> Back{{/link-to}}
 <hr>
 
 <h2>{{model.title}}</h2>
 <h3>{{model.subtitle}}</h3>
-<div class="body">
-  {{#liquid-spacer growDuration=1250}}
-    {{#markdown-file url=model.contentFile}}
-      {{! Rendered while the content is fetched }}
-      <div>Rendering Markdown...</div>
-    {{/markdown-file}}
-  {{/liquid-spacer}}
-</div>
-<p>Published on {{model.pubDate}}</p>
+{{#liquid-spacer growDuration=1250}}
+  {{#markdown-file url=model.contentFile}}
+    {{! Rendered while the content is fetched }}
+    <div>Rendering Markdown...</div>
+  {{/markdown-file}}
+{{/liquid-spacer}}
+
+<p><em>Published on {{model.pubDate}}</em></p>
+{{#link-to 'blog.index' class="button"}}<i class="fa fa-long-arrow-left" aria-hidden="true"></i> Back{{/link-to}}
