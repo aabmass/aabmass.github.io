@@ -1,16 +1,7 @@
 {{title model.title}}
 
 {{#link-to 'blog.index' class="button"}}<i class="fa fa-long-arrow-left" aria-hidden="true"></i> Back{{/link-to}}
-<hr>
 
-<h2>{{model.title}}</h2>
-<h3>{{model.subtitle}}</h3>
-{{#liquid-spacer growDuration=1250}}
-  {{#markdown-file url=model.contentFile}}
-    {{! Rendered while the content is fetched }}
-    <div>Rendering Markdown...</div>
-  {{/markdown-file}}
-{{/liquid-spacer}}
+{{blog-post post=model}}
 
-<p><em>Published on {{model.pubDate}}</em></p>
 {{#link-to 'blog.index' class="button"}}<i class="fa fa-long-arrow-left" aria-hidden="true"></i> Back{{/link-to}}

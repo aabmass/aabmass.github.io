@@ -1,0 +1,14 @@
+<h2>{{post.title}}</h2>
+<h3>{{post.subtitle}}</h3>
+
+{{! yield a special message before the content}}
+{{yield}}
+
+{{#liquid-spacer growDuration=1000}}
+  {{#markdown-file url=post.contentFile class=""}}
+    {{! Rendered while the content is fetched }}
+    <div>Rendering {{post.title}}...</div>
+  {{/markdown-file}}
+{{/liquid-spacer}}
+
+<p><em>Published on {{post.pubDate}}</em></p>
