@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import sys
-import threading
+from multiprocessing import Pool
 import datetime
 import random
 
@@ -50,13 +50,6 @@ def gen_save_random():
         # put the rest of the content after front matter
         outfile.write("\n".join(split[3:]))
 
-class PostGeneratorThread(threading.Thread):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-
-    def run(self):
-        gen_save_random()
-
 def main():
     try:
         num_to_gen = int(sys.argv[1])
@@ -64,13 +57,14 @@ def main():
         print("usage: ./generate_random.py <num to generate>")
         sys.exit(1)
 
+    # use a process pool to download async
+    max_pool_size = 150
+    pool = Pool(processes=min(num_to_gen, max_pool_size))
+    for i in range(0, num_to_gen):
+        pool.apply_async(gen_save_random)
 
-    threads = [PostGeneratorThread() for i in range(0, num_to_gen)]
-    for thread in threads:
-        thread.start()
-
-    for thread in threads:
-        thread.join()
+    pool.close()
+    pool.join()
 
 if __name__ == "__main__":
     main()
