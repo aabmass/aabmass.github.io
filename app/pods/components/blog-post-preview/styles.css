@@ -1,0 +1,22 @@
+& {
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+}
+
+& a {
+    color: black;
+    text-decoration: none;
+}
+
+.small {
+    font-size: 0.75em;
+}
+
+.large {
+    font-size: 1.25em;
+}
+
+/* unemphasized */
+.unemph {
+    color: #ADADAD;
+}

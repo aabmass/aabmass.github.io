@@ -1,8 +1,4 @@
 <h4>All Posts:</h4>
-<ul>
-  {{#each model as |post|}}
-    <li>
-      {{#link-to "blog.post" post.id}}{{post.title}}{{/link-to}}
-    </li>
-  {{/each}}
-</ul>
+{{#each model as |post|}}
+  {{blog-post-preview post=post}}
+{{/each}}
