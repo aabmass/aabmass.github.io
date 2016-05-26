@@ -5,10 +5,10 @@
 {{yield}}
 
 {{#liquid-spacer growDuration=1000}}
-  {{#markdown-file url=post.contentFile class=""}}
+  {{#markdown-file-latex url=post.contentFile class=""}}
     {{! Rendered while the content is fetched }}
     <div>Rendering {{post.title}}...</div>
-  {{/markdown-file}}
+  {{/markdown-file-latex}}
 {{/liquid-spacer}}
 
 <p><em>Published on {{post.pubDate}}</em></p>

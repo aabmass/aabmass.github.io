@@ -9,7 +9,7 @@ export default Ember.Route.extend({
       const error = reason.errors[0];
 
       // redirect to page-not-found route for a 404
-      if (error.status == 404) {
+      if (error.status == 404) { // jshint ignore:line
         // slice off the leading '/'
         var pathToWrite = transition.intent.url.slice(1);
 
