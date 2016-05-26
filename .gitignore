@@ -9,6 +9,9 @@
 # fake posts for testing
 *.fakepost.md
 
+# a cloned copy of the repo for publishing without losing node_modules et. al
+/pub-branch
+
 # dependencies
 /node_modules
 /bower_components
