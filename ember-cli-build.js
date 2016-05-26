@@ -1,6 +1,7 @@
 /*jshint node:true*/
 /* global require, module */
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+var Funnel = require('broccoli-funnel');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
@@ -29,5 +30,17 @@ module.exports = function(defaults) {
   // import it in app.css
   app.import('vendor/jPushMenu.js');
 
-  return app.toTree();
+  /* KaTex */
+  app.import('bower_components/katex/dist/katex.min.js');
+  app.import('bower_components/katex/dist/katex.min.css');
+  app.import('bower_components/katex/dist/contrib/auto-render.min.js');
+
+  // we want everything in the font directory, so use a broccoli funnel
+  var katexFonts = new Funnel('bower_components/katex/dist', {
+    srcDir: '/',
+    include: ['fonts/*'],
+    destDir: '/assets'
+  });
+
+  return app.toTree(katexFonts);
 };

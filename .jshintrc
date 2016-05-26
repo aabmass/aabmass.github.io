@@ -2,7 +2,9 @@
   "predef": [
     "document",
     "window",
-    "-Promise"
+    "-Promise",
+    "katex",
+    "renderMathInElement"
   ],
   "browser": true,
   "boss": true,
