@@ -21,7 +21,7 @@ class BlogLibrarian(object):
     def __init__(self, post_paths):
         self.make_dirs()
 
-        self.posts = set()
+        self.posts = []
         self.load_posts(post_paths)
 
     def make_dirs(self):
@@ -45,7 +45,13 @@ class BlogLibrarian(object):
     def load_posts(self, post_paths):
         for post_path in post_paths:
             # load tuples of (path, front matter)
-            self.posts.add((post_path, frontmatter.load(post_path)))
+            self.posts.append((post_path, frontmatter.load(post_path)))
+
+        # sort by date, use this 
+        def get_date_field(post):
+            return post[1].metadata['pubDate']
+
+        self.posts.sort(key=get_date_field)
 
     def output_all(self):
         """Outputs the whole blog faux api and content"""
